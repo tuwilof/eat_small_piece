@@ -1,2 +1,7 @@
-Здравствуйте, <?php echo $_POST['login']; ?>.
-Ваш пароль <?php echo $_POST['password']; ?> .
+<?php 
+	if (($_POST['login'] == "username") & ($_POST['password'] == "password")) {
+		header('Location: pies/');
+	} else {
+		header('Location: index/');
+	}
+ ?> 
