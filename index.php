@@ -14,7 +14,7 @@
 		<form action="action.php" method="post">
 			<input type="text" name="login" id="login"  value="username"><br />
 			<input type="password" name="password" id="pass"  value="password"><br />
-			<input type=submit id="subm">
+			<input type=submit id="subm" value="OK">
 		</form>
 	</div>
 	</body>
