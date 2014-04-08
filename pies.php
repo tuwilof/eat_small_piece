@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+	include('connect.php');
+?>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset=utf-8>
@@ -14,9 +17,16 @@
 				<a href="">Дом</a><br />
 			</td>
 			<td>
-				<a href="../add/">Добавить задачу</a>
+				<a href="../add/">Добавить задачу</a><br />
+			<?php 
+				$result = mysql_query("SELECT * FROM task");
+				while(($item = mysql_fetch_array($result))!=false):
+			?>
+				<?=$item['title']?>  <a href='../piece.php?id=<?=$item['id']?>'>редактировать</a><br />
+			<?php
+				endwhile;
+			?>
 			</td>
-			<td>1</td>
 		</tr>
 	</table>
 	</body>
