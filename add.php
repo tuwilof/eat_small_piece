@@ -7,21 +7,9 @@
 	</head>
 	<body>		
 		<form method='post' action='../addtask.php'>
-				<table>
-					<tr>
-						<td>Тип задачи:</td>
-						<td><input type='text' name='type'></td>
-					</tr>
-					<tr>
-						<td>Название задачи:</td>
-						<td><input type='text' name='title'></td>
-					</tr>
-					<tr>
-						<td colspan='2'>
-							<input type="submit" value="Добавить">
-						</td>
-					</tr>
-				</table>
-			</form>
+			Название задачи:<br />
+			<input type='text' name='title'><br />
+			<input type="submit" value="Добавить"><br />
+		</form>
 	</body>
 </html>

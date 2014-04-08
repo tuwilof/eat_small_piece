@@ -1,11 +1,10 @@
 ﻿<?php
 	include('connect.php');
 	$text = $_POST['title'];
-	$type = $_POST['type'];
 	echo $text;
 	echo '|';
 	echo $type;			
-	$query = "INSERT INTO task (title,type) VALUES ('$text',$type)";
+	$query = "INSERT INTO task (title) VALUES ('$text')";
 	$res = mysql_query($query);
 	echo '|';
 	echo $res;
