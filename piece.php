@@ -19,10 +19,13 @@
 		<script>var n=5</script>
 		<form name='dim' method='post' action='../addpiece.php?id=<?=$item['id']?>&n=4'>
 			<div id="divf">
-			1 <input type='text' name='title1' value='<?=$array[0]?>'><br />
-			2 <input type='text' name='title2' value='<?=$array[1]?>'><br />
-			3 <input type='text' name='title3' value='<?=$array[2]?>'><br />
-			4 <input type='text' name='title4' value='<?=$array[3]?>'><br />
+			<?php
+				for ($i = 0; $i < count($array); $i++) {
+					?>
+						<?=$i+1?> <input type='text' name='title<?=$i+1?>' value='<?=$array[$i]?>'><br />
+					<?php
+				}
+			?>
 			</div>
 			<input type=button onclick=plus()><br />
 			<input type="submit" value="Добавить"><br />
