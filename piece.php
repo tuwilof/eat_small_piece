@@ -16,13 +16,13 @@
 		$array = unserialize( $string );
 	?>
 		<?=$item['title']?><br />
-		<script>var n=5</script>
+		<script>var n="<? echo count($array) ?>"; var arr = []</script>
 		<form name='dim' method='post' action='../addpiece.php?id=<?=$item['id']?>&n=4'>
 			<div id="divf">
 			<?php
-				for ($i = 0; $i < count($array); $i++) {
+				for ($i = 1; $i < count($array); $i++) {
 					?>
-						<?=$i+1?> <input type='text' name='title<?=$i+1?>' value='<?=$array[$i]?>'><br />
+						<?=$i?> <input type='text' name='title<?=$i?>' id='title<?=$i?>' value='<?=$array[$i]?>'><br />
 					<?php
 				}
 			?>
@@ -35,9 +35,17 @@
 ?>
 <script>
 function plus(){
-document.getElementById('divf').innerHTML+=n+' <input type=text name="title'+n+'" value="<?=$array['+n+']?>"><br />'
-n++
-document.dim.action='../addpiece.php?id=<?=$item['id']?>&n='+n
+	for (var i = 1; i < n; i++) {
+		arr[i] = document.getElementById('title'+i).value;
+	}
+
+	document.getElementById('divf').innerHTML+=n+' <input type=text name="title'+n+'" id="title'+n+'" value="<?=$array['+n+']?>"><br />'
+	n++
+	document.dim.action='../addpiece.php?id=<?=$item['id']?>&n='+n
+
+	for (var i = 1; i < n-1; i++) {
+		document.getElementById('title' + i).value = arr[i];
+	}
 }
 </script>
 	</body>
