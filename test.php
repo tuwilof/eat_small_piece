@@ -10,14 +10,14 @@ function methodName()
 	$result = mysql_query("SELECT * FROM task");
 	$data = array();
 	while(($item = mysql_fetch_array($result))!=false):
-		$data[] = $item['title'];
+		$data[] = array($item['id'],$item['title']);
 	endwhile;
 	return $data; 
 }
 
 $data = methodName();
 	foreach ($data as $row) {
-		echo $row." ";
+		echo $row[0]." ".$row[1]."<br />";
 	}
 
 ?>
