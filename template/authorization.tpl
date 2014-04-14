@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>Eat small piece</title>
+		<link rel="stylesheet" type="text/css" href="template/css/style.css">
+	</head>
+	<body>
+	<div id="main">
+		<div id="logo">
+			<img src="template/image/logo.png">
+			<div id="textlogo">Eat small piece</div>
+		</div>
+		<form action="/engine/action.php" method="post">
+			<input type="text" name="login" id="login"  value="username"><br />
+			<input type="password" name="password" id="pass"  value="password"><br />
+			<input type=submit id="subm" value="OK">
+		</form>
+	</div>
+	</body>
+</html>
