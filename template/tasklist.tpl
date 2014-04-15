@@ -11,7 +11,7 @@
 	<body>
 		<a href="../index.php?page=add">Добавить задачу</a><br />
 			<?php foreach ($data as $row) {	?>
-				<?=$row[1]?>  <a href='../piece.php?page=piece&id=<?=$row[0]?>'>редактировать</a><br />
+				<?=$row[1]?>  <a href='../index.php?page=piece&id=<?=$row[0]?>'>редактировать</a><br />
 			<?php } ?>
 	</body>
 </html>

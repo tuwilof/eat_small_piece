@@ -1,5 +1,5 @@
 ﻿<?php
-	include('../engine/connect.php');
+	require_once("../engine/connect.php");
 	$text = $_POST['title'];
 	echo $text;
 	echo '|';

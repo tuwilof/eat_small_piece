@@ -1,6 +1,6 @@
 <?php
+	require_once("engine/connect.php");
 	$page = trim($_GET['page']);
-	echo $page;
 	if ($page == "pies") {
 		require_once("engine/model.php");
 		$data = methodName();

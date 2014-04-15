@@ -6,13 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>		
-<?php
-		header('Content-Type: text/html; charset=utf-8');
-	$res = mysql_connect('localhost','root','vagrant') or die("Could not connect: " . mysql_error());
-	mysql_select_db('esp', $res) or die("Could not select DB: " . mysql_error());
-	mysql_query('SET NAMES utf8');	
-
-	
+<?php	
 	if(isset($_GET['id'])) {
 		$id = $_GET['id'];
 		$result = mysql_query("SELECT * FROM task WHERE id ='$id'");
