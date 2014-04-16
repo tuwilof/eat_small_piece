@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset=utf-8>
-		<title>Eat small piece</title>
-	</head>
-	<body>		
-		<form method='post' action='../engine/addtask.php'>
-			Название задачи:<br />
-			<input type='text' name='title'><br />
-			<input type="submit" value="Добавить"><br />
-		</form>
-	</body>
-</html>
+<?php require_once("template/header.tpl"); ?>
+<div class="container">
+	<div class="page-header">
+		<h1>Add task</h1>
+	</div>
+	<form method='post' action='../engine/addtask.php'>
+		<p>Название задачи: <input type='text' name='title'></p>
+		<p><input type="submit" value="Добавить"></p>
+	</form>
+</div>
+<?php require_once("template/footer.tpl"); ?>

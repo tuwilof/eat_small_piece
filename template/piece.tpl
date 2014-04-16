@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset=utf-8>
-		<title>Eat small piece</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>		
+<?php require_once("template/header.tpl"); ?>	
+<div class="container">
+	<div class="page-header">
+		<h1>Edit task</h1>
+	</div>
 <?php	
 	if(isset($_GET['id'])) {
 		$id = $_GET['id'];
@@ -14,20 +11,20 @@
 		$string = $item['subtasks'];
 		$array = unserialize( $string );
 	?>
-		<?=$item['title']?><br />
+		<p><?=$item['title']?></p>
 		<script>var n="<? echo count($array) ?>"; var arr = []</script>
 		<form name='dim' method='post' action='../engine/addpiece.php?id=<?=$item['id']?>&n=4'>
 			<div id="divf">
 			<?php
 				for ($i = 1; $i < count($array); $i++) {
 					?>
-						<?=$i?> <input type='text' name='title<?=$i?>' id='title<?=$i?>' value='<?=$array[$i]?>'><br />
+						<p><?=$i?> <input type='text' name='title<?=$i?>' id='title<?=$i?>' value='<?=$array[$i]?>'><p>
 					<?php
 				}
 			?>
 			</div>
-			<input type=button onclick=plus()><br />
-			<input type="submit" value="Добавить"><br />
+			<p><input type=button onclick=plus()></p>
+			<p><input type="submit" value="Добавить"></p>
 		</form>
 	<?php
 	}
@@ -38,7 +35,7 @@ function plus(){
 		arr[i] = document.getElementById('title'+i).value;
 	}
 
-	document.getElementById('divf').innerHTML+=n+' <input type=text name="title'+n+'" id="title'+n+'" value="<?=$array['+n+']?>"><br />'
+	document.getElementById('divf').innerHTML+='<p>'+n+' <input type=text name="title'+n+'" id="title'+n+'" value="<?=$array['+n+']?>"></p>'
 	n++
 	document.dim.action='../engine/addpiece.php?id=<?=$item['id']?>&n='+n
 
@@ -47,5 +44,5 @@ function plus(){
 	}
 }
 </script>
-	</body>
-</html>
+</div>
+<?php require_once("template/footer.tpl"); ?>
