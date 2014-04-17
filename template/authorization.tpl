@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset=utf-8>
-		<title>Eat small piece</title>
-		<link rel="stylesheet" type="text/css" href="template/css/style.css">
-	</head>
-	<body>
-	<div id="main">
-		<div id="logo">
-			<img src="template/image/logo.png">
-			<div id="textlogo">Eat small piece</div>
-		</div>
-		<form action="/engine/action.php" method="post">
-			<input type="text" name="login" id="login"  value="username"><br />
-			<input type="password" name="password" id="pass"  value="password"><br />
-			<input type=submit id="subm" value="OK">
-		</form>
-	</div>
-	</body>
-</html>
+<?php require_once("template/header.tpl"); ?>	
+    <div class="container" style="width: 300px;">
+      <form class="form-signin" role="form" action="/engine/action.php" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" name="login" class="form-control" placeholder="username" required autofocus>
+        <input type="password" name="password" class="form-control" placeholder="password" required><br />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+    </div>
+<?php require_once("template/footer.tpl"); ?>
