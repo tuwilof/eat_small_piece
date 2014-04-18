@@ -9,4 +9,5 @@
 	echo $string." ".$id;			
 	$query = "UPDATE task SET subtasks = '$string' WHERE id ='$id'";
 	$res = mysql_query($query);
+	header("Location: /index.php?page=pies");
 ?>

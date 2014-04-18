@@ -8,5 +8,6 @@
 	$res = mysql_query($query);
 	echo '|';
 	echo $res;
+	header("Location: /index.php?page=pies");
 	//mysql_close();
 ?>
