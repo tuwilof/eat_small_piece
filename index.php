@@ -13,6 +13,10 @@
 		require_once("template/piece.tpl");
 	}
 	else {
-		require_once("template/authorization.tpl");
+		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			header('Location: /index.php?page=pies');
+		} else {
+			require_once("template/authorization.tpl");
+		}
 	}
 ?>
