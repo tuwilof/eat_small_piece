@@ -13,7 +13,7 @@
 	?>
 		<p><?=$item['title']?></p>
 		<script>var n="<? echo count($array) ?>"; var arr = []</script>
-		<form name='dim' method='post' action='../engine/addpiece.php?id=<?=$item['id']?>&n=4'>
+		<form name='dim' method='post' action='../engine/addpiece.php?id=<?=$item['id']?>&n=<? echo count($array) ?>'>
 			<div id="divf">
 			<?php
 				for ($i = 1; $i < count($array); $i++) {
