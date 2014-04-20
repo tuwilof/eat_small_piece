@@ -18,12 +18,12 @@
 			<?php
 				for ($i = 1; $i < count($array); $i++) {
 					?>
-						<p><?=$i?> <input type='text' name='title<?=$i?>' id='title<?=$i?>' value='<?=$array[$i]?>'><p>
+						<p id="<?=$i?>"><?=$i?> <input type='text' name='title<?=$i?>' size="70"  id='title<?=$i?>' value='<?=$array[$i]?>'> <input type="button" onclick="minus(<?=$i?>)" value="-"><p>
 					<?php
 				}
 			?>
 			</div>
-			<p><input type=button onclick=plus()></p>
+			<p><input type="button" onclick="plus()" value="+"></p>
 			<p><input type="submit" value="Добавить"></p>
 		</form>
 	<?php
@@ -35,9 +35,27 @@ function plus(){
 		arr[i] = document.getElementById('title'+i).value;
 	}
 
-	document.getElementById('divf').innerHTML+='<p>'+n+' <input type=text name="title'+n+'" id="title'+n+'" value="<?=$array['+n+']?>"></p>'
+	document.getElementById('divf').innerHTML+='<p id="'+n+'">'+n+' <input type=text name="title'+n+'" size="70" id="title'+n+'" value="<?=$array['+n+']?>"> <input type="button" onclick="minus('+n+')" value="-"></p>'
 	n++
 	document.dim.action='../engine/addpiece.php?id=<?=$item['id']?>&n='+n
+
+	for (var i = 1; i < n-1; i++) {
+		document.getElementById('title' + i).value = arr[i];
+	}
+}
+function minus(myIndex){
+	for (var i = 1; i < n; i++) {
+		arr[i] = document.getElementById('title'+i).value;
+	}
+	arr.splice(myIndex,1);
+	n--
+	var el = document.getElementById(n);
+	el.parentNode.removeChild(el);
+
+	//n--
+	document.dim.action='../engine/addpiece.php?id=<?=$item['id']?>&n='+n
+
+
 
 	for (var i = 1; i < n-1; i++) {
 		document.getElementById('title' + i).value = arr[i];
