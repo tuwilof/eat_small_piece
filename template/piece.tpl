@@ -12,13 +12,13 @@
 		$array = unserialize( $string );
 	?>
 		<p><?=$item['title']?></p>
-		<script>var n="<? echo count($array) ?>"; var arr = []</script>
+		<script>var n="<? echo count($array) ?>"; var arr = []; var arrcheck = []</script>
 		<form name='dim' method='post' action='../engine/addpiece.php?id=<?=$item['id']?>&n=<? echo count($array) ?>'>
 			<div id="divf">
 			<?php
 				for ($i = 1; $i < count($array); $i++) {
 					?>
-						<p id="<?=$i?>"><?=$i?> <input type='text' name='title<?=$i?>' size="70"  id='title<?=$i?>' value='<?=$array[$i]?>'> <input type="button" onclick="minus(<?=$i?>)" value="-"><p>
+						<p id="<?=$i?>"><?=$i?> <input type="checkbox" id="check<?=$i?>" <?=$array[$i][1]?>> <input type='text' name='title<?=$i?>' size="70"  id='title<?=$i?>' value='<?=$array[$i][0]?>'> <input type="button" onclick="minus(<?=$i?>)" value="-"><p>
 					<?php
 				}
 			?>
@@ -34,20 +34,30 @@ function plus(){
 	for (var i = 1; i < n; i++) {
 		arr[i] = document.getElementById('title'+i).value;
 	}
+	for (var i = 1; i < n; i++) {
+		arrcheck[i] = document.getElementById('check' + i).checked;
+	}
 
-	document.getElementById('divf').innerHTML+='<p id="'+n+'">'+n+' <input type=text name="title'+n+'" size="70" id="title'+n+'" value="<?=$array['+n+']?>"> <input type="button" onclick="minus('+n+')" value="-"></p>'
+	document.getElementById('divf').innerHTML+='<p id="'+n+'">'+n+' <input type="checkbox" id="check'+n+'" <?=$array['+n+'][1]?>> <input type=text name="title'+n+'" size="70" id="title'+n+'" value="<?=$array['+n+'][0]?>"> <input type="button" onclick="minus('+n+')" value="-"></p>'
 	n++
 	document.dim.action='../engine/addpiece.php?id=<?=$item['id']?>&n='+n
 
 	for (var i = 1; i < n-1; i++) {
 		document.getElementById('title' + i).value = arr[i];
 	}
+	for (var i = 1; i < n-1; i++) {
+		document.getElementById('check' + i).checked = arrcheck[i];
+	}
 }
 function minus(myIndex){
 	for (var i = 1; i < n; i++) {
 		arr[i] = document.getElementById('title'+i).value;
 	}
+	for (var i = 1; i < n; i++) {
+		arrcheck[i] = document.getElementById('check' + i).checked;
+	}
 	arr.splice(myIndex,1);
+	arrcheck.splice(myIndex,1);
 	n--
 	var el = document.getElementById(n);
 	el.parentNode.removeChild(el);
@@ -59,6 +69,9 @@ function minus(myIndex){
 
 	for (var i = 1; i < n-1; i++) {
 		document.getElementById('title' + i).value = arr[i];
+	}
+	for (var i = 1; i < n-1; i++) {
+		document.getElementById('check' + i).checked = arrcheck[i];
 	}
 }
 </script>
