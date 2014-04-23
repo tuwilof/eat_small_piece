@@ -24,7 +24,7 @@
 			?>
 			</div>
 			<p><input type="button" onclick="plus()" value="+"></p>
-			<p><input type="submit" value="Добавить"></p>
+			<p><input type="submit" value="Отправить"></p>
 		</form>
 	<?php
 	}
