@@ -38,7 +38,7 @@ function plus(){
 		arrcheck[i] = document.getElementById('check' + i).value;
 	}
 
-	document.getElementById('divf').innerHTML+='<p id="'+n+'">'+n+' <input type="text" name="check'+n+'" size="1" id="check'+n+'" value="<?=$array['+n+'][1]?>" onclick="check('+n+')"> <input type="text" name="title'+n+'" size="70" id="title'+n+'" value="<?=$array['+n+'][0]?>"> <input type="button" onclick="minus('+n+')" value="-"></p>'
+	document.getElementById('divf').innerHTML+='<p id="'+n+'">'+n+' <input type="text" name="check'+n+'" size="1" id="check'+n+'" value="0" onclick="check('+n+')"> <input type="text" name="title'+n+'" size="70" id="title'+n+'" value="<?=$array['+n+'][0]?>"> <input type="button" onclick="minus('+n+')" value="-"></p>'
 	n++
 	document.dim.action='../engine/addpiece.php?id=<?=$item['id']?>&n='+n
 
