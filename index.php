@@ -12,6 +12,12 @@
 	else if ($page == "piece") {
 		require_once("template/piece.tpl");
 	}
+	else if ($page == "getsubtask") {
+		require_once("template/get.tpl");
+	}
+	else if ($page == "performed") {
+		require_once("template/performed.tpl");
+	}
 	else {
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
 			header('Location: /index.php?page=pies');
