@@ -13,6 +13,8 @@
 		require_once("template/piece.tpl");
 	}
 	else if ($page == "getsubtask") {
+		require_once("engine/model.php");
+		$data = getSubtasks();
 		require_once("template/get.tpl");
 	}
 	else if ($page == "performed") {
