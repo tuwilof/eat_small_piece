@@ -15,25 +15,27 @@
 		$item = mysql_fetch_array($result);
 		$string = $item['taken'];
 		$array = unserialize( $string );
+		//idTask, title, idSubtask
 		
 		for ($i = 0; $i < count($array); $i++) {
-			$id = $array[$i][0];
-			//echo "id = ".$id."<br />";
-			$result = mysql_query("SELECT * FROM task WHERE id ='$id'");
+			$idTask = $array[$i][0];
+			$title = $array[$i][1];
+			$idSubtask = $array[$i][2];
+			//echo "idTask = ".$idTask."<br />";
+			$result = mysql_query("SELECT * FROM task WHERE id ='$idTask'");
 			$item = mysql_fetch_array($result);
+
+			$titleTask = $item['title'];
+
 			$string = $item['subtasks'];
 			$taken = unserialize( $string );//массив под задач
-			$subtask = "null";
-			//echo "count = ".count($taken)."<br />";
-			for ($j = 1; $j < count($taken); $j++) {
-				if ($taken[$j][1] == 0) {
-					$subtask = $taken[$j][0];
-					break;
-				}
-			}
-			//echo $subtask."<br />";
-			//echo "<br /><br />";
-			$data[] = array($item['title'], $subtask, $array[$i][1]); 
+			//titleSubtask, checkSubtask
+
+			$titleSubtask = $taken[$idSubtask][0];
+			$checkSubtask = $taken[$idSubtask][1];
+			
+			//echo $idTask." ".$titleTask.": ".$titleSubtask." ".$checkSubtask."<br />";
+			$data[] = array($titleTask, $titleSubtask, $checkSubtask); 
 		}
 		return $data; 
 	}
