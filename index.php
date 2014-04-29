@@ -18,6 +18,8 @@
 		require_once("template/get.tpl");
 	}
 	else if ($page == "performed") {
+		require_once("engine/model.php");
+		$data = performedList();
 		require_once("template/performed.tpl");
 	}
 	else {

@@ -39,4 +39,13 @@
 		}
 		return $data; 
 	}
+	function performedList()
+	{
+		$result = mysql_query("SELECT * FROM performed");
+		$data = array();
+		while(($item = mysql_fetch_array($result))!=false):
+			$data[] = array($item['id'],$item['title'],$item['datep']);
+		endwhile;
+		return $data; 
+	}
 ?>
