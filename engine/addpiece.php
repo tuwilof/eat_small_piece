@@ -4,7 +4,7 @@
 	$n = $_GET['n'];
 	echo $n;
 	for ($i = 0; $i < $n; $i++) {
-			$array[] = array($_POST['title'.$i], $_POST['check'.$i]);
+		$array[] = array($_POST['title'.$i], $_POST['check'.$i]);
 	}
 	$string = serialize($array);
 	//echo $string." ".$id;		

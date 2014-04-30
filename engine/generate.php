@@ -32,5 +32,5 @@
 	$string = serialize($data);
 	$query = "INSERT INTO getsubtask (taken) VALUES ('$string')";
 	$res = mysql_query($query);
-	//header("Location: /index.php?page=getsubtask");
+	header("Location: /index.php?page=getsubtask");
 ?>
