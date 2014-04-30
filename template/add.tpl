@@ -1,4 +1,3 @@
-<?php require_once("template/header.tpl"); ?>
 <div class="container">
 	<div class="page-header">
 		<h1>Add task</h1>
@@ -8,4 +7,3 @@
 		<p><input type="submit" value="Добавить"></p>
 	</form>
 </div>
-<?php require_once("template/footer.tpl"); ?>

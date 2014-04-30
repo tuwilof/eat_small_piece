@@ -1,6 +1,3 @@
-<?php 
-	require_once("template/header.tpl");
-?>
 <div class="container">
 	<div class="page-header">
 		<h1>Get subtask</h1>
@@ -14,17 +11,3 @@
 		<p><input type="submit" value="Отправить"></p>
 	</form>
 </div>
-<script>
-function check(checkIndex) {
-	var k = document.getElementById('check' + checkIndex).value;
-	if (k == 1) {
-		document.getElementById('check' + checkIndex).value = 0;
-	} 
-	else {
-		document.getElementById('check' + checkIndex).value = 1;
-	}
-}
-</script>
-<?php 
-	require_once("template/footer.tpl"); 
-?>

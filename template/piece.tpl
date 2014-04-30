@@ -1,4 +1,3 @@
-<?php require_once("template/header.tpl"); ?>	
 <div class="container">
 	<div class="page-header">
 		<h1>Edit task</h1>
@@ -30,4 +29,3 @@
 	}
 ?>
 </div>
-<?php require_once("template/footer.tpl"); ?>
