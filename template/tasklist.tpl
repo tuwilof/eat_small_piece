@@ -1,7 +1,3 @@
-<?php 
-	if (isset($_COOKIE['EatSmallPieceCookie'])) {
-	require_once("template/header.tpl");
-?>
 <div class="container">
 	<div class="page-header">
 		<h1>Task list</h1>
@@ -21,9 +17,3 @@ if($_REQUEST['exit'])
 	<p><?=$row[1]?> <a href='../index.php?page=piece&id=<?=$row[0]?>'> редактировать</a> <a href='../engine/deletetask.php?id=<?=$row[0]?>'> удалить</a></p>
 	<?php } ?>
 </div>
-<?php 
-	require_once("template/footer.tpl"); 
-	} else {
-		header('Location: /index.php');
-	}
-?>

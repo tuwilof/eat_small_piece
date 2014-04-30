@@ -4,31 +4,53 @@
 	if ($page == "pies") {
 		require_once("engine/model.php");
 		$data = methodName();
-		require_once("template/tasklist.tpl");
+		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			require_once("template/header.tpl");
+			require_once("template/tasklist.tpl");
+			require_once("template/footer.tpl");
+		} else {
+			header('Location: /index.php');
+		}
 	}
 	else if ($page == "add") {
-		require_once("template/header.tpl");
-		require_once("template/add.tpl");
-		require_once("template/footer.tpl");
+		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			require_once("template/header.tpl");
+			require_once("template/add.tpl");
+			require_once("template/footer.tpl");
+		} else {
+			header('Location: /index.php');
+		}
 	}
 	else if ($page == "piece") {
-		require_once("template/header.tpl");
-		require_once("template/piece.tpl");
-		require_once("template/footer.tpl");
+		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			require_once("template/header.tpl");
+			require_once("template/piece.tpl");
+			require_once("template/footer.tpl");
+		} else {
+			header('Location: /index.php');
+		}
 	}
 	else if ($page == "getsubtask") {
 		require_once("engine/model.php");
 		$data = getSubtasks();
-		require_once("template/header.tpl");
-		require_once("template/get.tpl");
-		require_once("template/footer.tpl");
+		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			require_once("template/header.tpl");
+			require_once("template/get.tpl");
+			require_once("template/footer.tpl");
+		} else {
+			header('Location: /index.php');
+		}
 	}
 	else if ($page == "performed") {
 		require_once("engine/model.php");
 		$data = performedList();
-		require_once("template/header.tpl");
-		require_once("template/performed.tpl");
-		require_once("template/footer.tpl");
+		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			require_once("template/header.tpl");
+			require_once("template/performed.tpl");
+			require_once("template/footer.tpl");
+		} else {
+			header('Location: /index.php');
+		}
 	}
 	else {
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
