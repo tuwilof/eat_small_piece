@@ -23,9 +23,18 @@
 	}
 	else if ($page == "piece") {
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
-			require_once("template/header.tpl");
-			require_once("template/piece.tpl");
-			require_once("template/footer.tpl");
+			if(isset($_GET['id'])) {
+				$id = $_GET['id'];
+				$result = mysql_query("SELECT * FROM task WHERE id ='$id'");
+				$item = mysql_fetch_array($result);
+				$string = $item['subtasks'];
+				$array = unserialize( $string );
+				require_once("template/header.tpl");
+				require_once("template/piece.tpl");
+				require_once("template/footer.tpl");
+			} else {
+				header('Location: /index.php?page=pies');	
+			}
 		} else {
 			header('Location: /index.php');
 		}
