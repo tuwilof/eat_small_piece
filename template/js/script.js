@@ -33,12 +33,10 @@ function minus(myIndex){
 	//n--
 	document.dim.action='../engine/addpiece.php?id='+itemid+'&n='+n
 
-
-
-	for (var i = 1; i < n-1; i++) {
+	for (var i = 1; i < n; i++) {
 		document.getElementById('title' + i).value = arr[i];
 	}
-	for (var i = 1; i < n-1; i++) {
+	for (var i = 1; i < n; i++) {
 		document.getElementById('check' + i).value = arrcheck[i];
 	}
 }
