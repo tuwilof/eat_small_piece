@@ -1,50 +1,49 @@
 <?php
-	function methodName()
+	function retrievesTaskListInArray()
 	{
 		$result = mysql_query("SELECT * FROM task");
 		$data = array();
-		while(($item = mysql_fetch_array($result))!=false):
-			$data[] = array($item['id'],$item['title']);
+		while(($item = mysql_fetch_array($result)) != false):
+			$data[] = array($item['id'], $item['title']);
 		endwhile;
 		return $data; 
 	}
-	function getSubtasks()
+
+	function retrievesSubtaskListAndTitleTaskInArray()
 	{
 		$data = array();
-		$result = mysql_query("SELECT * FROM getsubtask ORDER BY id DESC LIMIT 1");
-		$item = mysql_fetch_array($result);
-		$string = $item['taken'];
-		$array = unserialize( $string );
-		//idTask, title, idSubtask
+		$resultOne = mysql_query("SELECT * FROM getsubtask ORDER BY id DESC LIMIT 1");//take the last record od DB
+		$itemOne = mysql_fetch_array($resultOne);
+		$stringOne = $itemOne['taken'];
+		$array = unserialize($stringOne);// array comprises: ID task, title, ID subtask
 		
-		for ($i = 0; $i < count($array); $i++) {
-			$idTask = $array[$i][0];
-			$title = $array[$i][1];
-			$idSubtask = $array[$i][2];
-			//echo "idTask = ".$idTask."<br />";
-			$result = mysql_query("SELECT * FROM task WHERE id ='$idTask'");
-			$item = mysql_fetch_array($result);
+		for ($i = 0; $i < count($array); $i++) {//go through the array of task by ID
+			$idTask = $array[$i][0];//ID task
+			$title = $array[$i][1];//title task
+			$idSubtask = $array[$i][2];//ID of the first unsolved subtask
 
-			$titleTask = $item['title'];
+			$resultTwo = mysql_query("SELECT * FROM task WHERE id ='$idTask'");//connect to the DB by ID subtask for extract its title
+			$itemTwo = mysql_fetch_array($resultTwo);
 
-			$string = $item['subtasks'];
-			$taken = unserialize( $string );//массив под задач
-			//titleSubtask, checkSubtask
+			$titleTask = $itemTwo['title'];
 
-			$titleSubtask = $taken[$idSubtask][0];
-			$checkSubtask = $taken[$idSubtask][1];
+			$stringTwo = $itemTwo['subtasks'];
+			$taken = unserialize($stringTwo);//array subtasks comprises: titleSubtask, checkSubtask
+
+			$titleSubtask = $taken[$idSubtask][0];//title of the first unsolved subtask
+			$checkSubtask = $taken[$idSubtask][1];//value of the first unsolved subtask
 			
-			//echo $idTask." ".$titleTask.": ".$titleSubtask." ".$checkSubtask."<br />";
 			$data[] = array($titleTask, $titleSubtask, $checkSubtask); 
 		}
 		return $data; 
 	}
-	function performedList()
+
+	function retrievesPerfomedListInArray()
 	{
 		$result = mysql_query("SELECT * FROM performed");
 		$data = array();
-		while(($item = mysql_fetch_array($result))!=false):
-			$data[] = array($item['id'],$item['title'],$item['datep']);
+		while(($item = mysql_fetch_array($result)) != false):
+			$data[] = array($item['id'], $item['title'], $item['datep']);
 		endwhile;
 		return $data; 
 	}

@@ -3,7 +3,7 @@
 	$page = trim($_GET['page']);
 	if ($page == "pies") {
 		require_once("engine/model.php");
-		$data = methodName();
+		$data = retrievesTaskListInArray();
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
 			require_once("template/header.tpl");
 			require_once("template/tasklist.tpl");
@@ -41,7 +41,7 @@
 	}
 	else if ($page == "getsubtask") {
 		require_once("engine/model.php");
-		$data = getSubtasks();
+		$data = retrievesSubtaskListAndTitleTaskInArray();
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
 			require_once("template/header.tpl");
 			require_once("template/get.tpl");
@@ -52,7 +52,7 @@
 	}
 	else if ($page == "performed") {
 		require_once("engine/model.php");
-		$data = performedList();
+		$data = retrievesPerfomedListInArray();
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
 			require_once("template/header.tpl");
 			require_once("template/performed.tpl");
