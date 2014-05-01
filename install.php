@@ -36,6 +36,10 @@
 		$fp = fopen("engine/connect.php", "w");
 		fwrite($fp, $text);
 		fclose($fp);
+
+		require_once("engine/connect.php");
+		$query = "INSERT INTO user (name,pass) VALUES ('$user','$pass')";
+		$res = mysql_query($query);
 	}
 ?>
 <?php

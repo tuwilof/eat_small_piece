@@ -1,5 +1,10 @@
 <?php 
-	if (($_POST['login'] == "username") & ($_POST['password'] == "password")) {
+	require_once("../engine/connect.php");
+	$result = mysql_query("SELECT * FROM user ORDER BY id DESC LIMIT 1");
+	$item = mysql_fetch_array($result);
+	$name = $item['name'];
+	$pass = $item['pass'];
+	if (($_POST['login'] == $name) & ($_POST['password'] == $pass)) {
 		setcookie("EatSmallPieceCookie", 'test', time() + 60 * 60 * 24 * 30, "/");
 		header('Location: /index.php?page=pies');
 	} else {
