@@ -38,8 +38,50 @@
 		fclose($fp);
 
 		require_once("engine/connect.php");
+
+		$query = "
+		CREATE TABLE IF NOT EXISTS `getsubtask` (
+		  `id` int(8) NOT NULL AUTO_INCREMENT,
+		  `taken` text CHARACTER SET utf8 NOT NULL,
+		  PRIMARY KEY (`id`)
+		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+		";
+		$res = mysql_query($query);
+
+		$query = "
+		CREATE TABLE IF NOT EXISTS `performed` (
+		  `id` int(11) NOT NULL AUTO_INCREMENT,
+		  `title` text CHARACTER SET utf8 NOT NULL,
+		  `datep` text CHARACTER SET utf8 NOT NULL,
+		  PRIMARY KEY (`id`)
+		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+		";
+		$res = mysql_query($query);
+
+		$query = "
+		CREATE TABLE IF NOT EXISTS `task` (
+		  `id` int(4) NOT NULL AUTO_INCREMENT,
+		  `title` text CHARACTER SET utf8 NOT NULL,
+		  `subtasks` text CHARACTER SET utf8 NOT NULL,
+		  PRIMARY KEY (`id`)
+		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+		";
+		$res = mysql_query($query);
+
+		$query = "
+		CREATE TABLE IF NOT EXISTS `user` (
+		  `id` int(4) NOT NULL AUTO_INCREMENT,
+		  `name` text CHARACTER SET utf8 NOT NULL,
+		  `pass` text CHARACTER SET utf8 NOT NULL,
+		  PRIMARY KEY (`id`)
+		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+		";
+		$res = mysql_query($query);
+
 		$query = "INSERT INTO user (name,pass) VALUES ('$user','$pass')";
 		$res = mysql_query($query);
+
+		header('Location: /index.php');
 	}
 ?>
 <?php
