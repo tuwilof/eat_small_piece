@@ -61,6 +61,15 @@
 			header('Location: /index.php');
 		}
 	}
+	else if ($page == "settings") {
+		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			require_once("template/header.tpl");
+			require_once("template/settings.tpl");
+			require_once("template/footer.tpl");
+		} else {
+			header('Location: /index.php');
+		}
+	}
 	else {
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
 			header('Location: /index.php?page=pies');
