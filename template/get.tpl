@@ -1,7 +1,4 @@
 <div class="container">
-	<div class="page-header">
-		<h1>Get subtask</h1>
-	</div>
 	<p><a href="../engine/generate.php">сгенерировать новый список заданий</a></p>
 	<?php $i = 0; ?>
 	<form name='dim' method='post' action='../engine/todone.php'>

@@ -1,7 +1,4 @@
 <div class="container">
-	<div class="page-header">
-		<h1>Settings</h1>
-	</div>
 	<p><b>Смена пароля</b></p>
 	<form method='post'  action="../engine/passwordchange.php">
 		<p>Старый пароль: <input type="password" name="oldpass"></p>

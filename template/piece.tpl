@@ -1,7 +1,4 @@
 <div class="container">
-	<div class="page-header">
-		<h1>Edit task</h1>
-	</div>
 	<p><?=$item['title']?></p>
 	<script>
 		var n="<? echo count($array) ?>"; 

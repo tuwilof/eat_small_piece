@@ -74,7 +74,6 @@
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
 			header('Location: /index.php?page=pies');
 		} else {
-			require_once("template/header.tpl");
 			require_once("template/authorization.tpl");
 			require_once("template/footer.tpl");
 		}

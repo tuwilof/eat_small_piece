@@ -17,3 +17,23 @@
     <![endif]-->
   </head>
   <body>
+  <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Project name</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/index.php?page=pies">Task list</a></li>
+            <li><a href="/index.php?page=getsubtask">Get subtasks</a></li>
+            <li><a href="/index.php?page=performed">Performed</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/index.php?page=settings">Settings</a></li>
+            <li><a href="/engine/exit.php">Exit</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <br /><br /><br /><br />
