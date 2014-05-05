@@ -5,6 +5,7 @@
 		require_once("engine/model.php");
 		$data = retrievesTaskListInArray();
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			$titlePage = "Task list";
 			require_once("template/header.tpl");
 			require_once("template/tasklist.tpl");
 			require_once("template/footer.tpl");
@@ -14,6 +15,7 @@
 	}
 	else if ($page == "add") {
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			$titlePage = "Add task";
 			require_once("template/header.tpl");
 			require_once("template/add.tpl");
 			require_once("template/footer.tpl");
@@ -29,6 +31,7 @@
 				$item = mysql_fetch_array($result);
 				$string = $item['subtasks'];
 				$array = unserialize( $string );
+				$titlePage = "Subtask list";
 				require_once("template/header.tpl");
 				require_once("template/piece.tpl");
 				require_once("template/footer.tpl");
@@ -43,6 +46,7 @@
 		require_once("engine/model.php");
 		$data = retrievesSubtaskListAndTitleTaskInArray();
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			$titlePage = "Get subtask";
 			require_once("template/header.tpl");
 			require_once("template/get.tpl");
 			require_once("template/footer.tpl");
@@ -54,6 +58,7 @@
 		require_once("engine/model.php");
 		$data = retrievesPerfomedListInArray();
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			$titlePage = "Performed";
 			require_once("template/header.tpl");
 			require_once("template/performed.tpl");
 			require_once("template/footer.tpl");
@@ -63,6 +68,7 @@
 	}
 	else if ($page == "settings") {
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
+			$titlePage = "Settings";
 			require_once("template/header.tpl");
 			require_once("template/settings.tpl");
 			require_once("template/footer.tpl");
@@ -74,6 +80,7 @@
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
 			header('Location: /index.php?page=pies');
 		} else {
+			$titlePage = "Eat small piece";
 			require_once("template/authorization.tpl");
 			require_once("template/footer.tpl");
 		}
