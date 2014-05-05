@@ -6,6 +6,7 @@
 		$data = retrievesTaskListInArray();
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
 			$titlePage = "Task list";
+			$scriptPage = "<script>document.getElementById('p1').classList.add('active');</script>";
 			require_once("template/header.tpl");
 			require_once("template/tasklist.tpl");
 			require_once("template/footer.tpl");
@@ -47,6 +48,7 @@
 		$data = retrievesSubtaskListAndTitleTaskInArray();
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
 			$titlePage = "Get subtask";
+			$scriptPage = "<script>document.getElementById('p2').classList.add('active');</script>";
 			require_once("template/header.tpl");
 			require_once("template/get.tpl");
 			require_once("template/footer.tpl");
@@ -59,6 +61,7 @@
 		$data = retrievesPerfomedListInArray();
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
 			$titlePage = "Performed";
+			$scriptPage = "<script>document.getElementById('p3').classList.add('active');</script>";
 			require_once("template/header.tpl");
 			require_once("template/performed.tpl");
 			require_once("template/footer.tpl");
@@ -69,6 +72,7 @@
 	else if ($page == "settings") {
 		if (isset($_COOKIE['EatSmallPieceCookie'])) {
 			$titlePage = "Settings";
+			$scriptPage = "<script>document.getElementById('p4').classList.add('active');</script>";
 			require_once("template/header.tpl");
 			require_once("template/settings.tpl");
 			require_once("template/footer.tpl");

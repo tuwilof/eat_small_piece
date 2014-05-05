@@ -25,15 +25,16 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/index.php?page=pies">Task list</a></li>
-            <li><a href="/index.php?page=getsubtask">Get subtasks</a></li>
-            <li><a href="/index.php?page=performed">Performed</a></li>
+            <li id="p1"><a href="/index.php?page=pies">Task list</a></li>
+            <li id="p2"><a href="/index.php?page=getsubtask">Get subtasks</a></li>
+            <li id="p3"><a href="/index.php?page=performed">Performed</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/index.php?page=settings">Settings</a></li>
+            <li id="p4"><a href="/index.php?page=settings">Settings</a></li>
             <li><a href="/engine/exit.php">Exit</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
+    <?php echo $scriptPage; ?>
     <br /><br /><br /><br />
