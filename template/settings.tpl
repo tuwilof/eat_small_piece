@@ -1,5 +1,4 @@
 <div class="container">
-	<p><b>Смена пароля</b></p>
 	<form method='post'  action="../engine/passwordchange.php" class="form-horizontal" role="form">
 		<div class="form-group">
 			<label for="inputPassword1" class="col-sm-2 control-label">Old password:</label>
