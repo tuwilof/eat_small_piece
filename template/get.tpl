@@ -5,6 +5,6 @@
 <?php foreach ($data as $row) {	?>
 		<p><?=$row[0]?>: <?=$row[1]?> <input type='text' name='check<?=$i?>' size="1" id='check<?=$i?>' value='<?=$row[2]?>' onclick="check(<?=$i?>)"></p>
 <?php $i++;} ?>
-		<p><input type="submit" value="Отправить"></p>
+		<p><input type="submit" value="Send"></p>
 	</form>
 </div>

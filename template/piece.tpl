@@ -13,6 +13,6 @@
 <?php } ?>
 		</div>
 		<p><input type="button" onclick="plus()" value="+"></p>
-		<p><input type="submit" value="Отправить"></p>
+		<p><input type="submit" value="Send"></p>
 	</form>
 </div>
