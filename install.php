@@ -1,78 +1,66 @@
+<?php
+	$page = trim($_GET['page']);
+	if ($page == "3") {
+		$user = $_POST['user'];
+		$pass = $_POST['pass'];
+
+		require_once("engine/connect.php");
+
+		$query = "INSERT INTO user (name,pass) VALUES ('$user','$pass')";
+		$res = mysql_query($query);
+/*
+********************************
+
+		PAGE 3 START
+
+********************************
+*/
+?>
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $titlePage; ?></title>
-
-    <!-- Bootstrap -->
-    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../template/css/style.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?php echo $titlePage; ?></title>
+	<!-- Bootstrap -->
+	<link href="../template/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../template/css/style.css" rel="stylesheet">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
 <div class="container">
 	<div class="page-header">
 		<h1>Install</h1>
 	</div>
-	<form method='post'  action="install.php" class="form-horizontal" role="form">
-		<p><b>Database configuration</b></p>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Server</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" name="servdb">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">User</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" name="userdb">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Password</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" name="passdb">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Database</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" name="namedb">
-			</div>
-		</div>
-		<br />
-		<p><b>User settings</b></p>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">User</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" name="user">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Password</label>
-			<div class="col-sm-4">
-				<input type="password" class="form-control" name="pass">
-			</div>
-		</div>
-		<p><input type="submit" value="Send" class="btn btn-default"></p>
-	</form>
+	<p>Thanks</p>
 </div>
-<?php 
-	if (isset($_POST['servdb'])) {
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="template/js/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="template/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="template/js/script.js"></script>
+</body>
+</html>
+<?php
+/*
+********************************
+
+		PAGE 3 FINISH
+
+********************************
+*/
+	}
+	else if ($page == "2") {
 		$servdb = $_POST['servdb'];
 		$userdb = $_POST['userdb'];
 		$passdb = $_POST['passdb'];
 		$namedb = $_POST['namedb'];
-
-		$user = $_POST['user'];
-		$pass = $_POST['pass'];
 
 		$s1 = "header('Content-Type: text/html; charset=utf-8');";
 		$s2 = "\$res = mysql_connect('".$servdb."','".$userdb."','".$passdb."') or die(\"Could not connect: \" . mysql_error());";
@@ -123,13 +111,142 @@
 		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 		";
 		$res = mysql_query($query);
+/*
+********************************
 
-		$query = "INSERT INTO user (name,pass) VALUES ('$user','$pass')";
-		$res = mysql_query($query);
+		PAGE 2 START
 
-		header('Location: /index.php');
-	}
+********************************
+*/
 ?>
-<?php
-	require_once("template/footer.tpl");
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?php echo $titlePage; ?></title>
+	<!-- Bootstrap -->
+	<link href="../template/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../template/css/style.css" rel="stylesheet">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1>Install</h1>
+	</div>
+	<form method='post'  action="install.php?page=3" class="form-horizontal" role="form">
+		<p><b>User settings</b></p>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">User</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="user">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Password</label>
+			<div class="col-sm-4">
+				<input type="password" class="form-control" name="pass">
+			</div>
+		</div>
+		<p><input type="submit" value="Send" class="btn btn-default"></p>
+	</form>
+</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="template/js/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="template/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="template/js/script.js"></script>
+</body>
+</html>
+<?php 
+/*
+********************************
+
+		PAGE 2 FINISH
+
+********************************
+*/
+	} else { 
+/*
+********************************
+
+		PAGE 1 START
+
+********************************
+*/
+?>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?php echo $titlePage; ?></title>
+	<!-- Bootstrap -->
+	<link href="../template/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../template/css/style.css" rel="stylesheet">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1>Install</h1>
+	</div>
+	<form method='post'  action="install.php?page=2" class="form-horizontal" role="form">
+		<p><b>Database configuration</b></p>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Server</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="servdb">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">User</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="userdb">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Password</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="passdb">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Database</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="namedb">
+			</div>
+		</div>
+		<p><input type="submit" value="Send" class="btn btn-default"></p>
+	</form>
+</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="template/js/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="template/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="template/js/script.js"></script>
+</body>
+</html>
+<?php 
+	}
+/*
+********************************
+
+		PAGE 1 FINISH
+
+********************************
+*/
 ?>
