@@ -1,5 +1,5 @@
 <div class="container">
-	<p><a href="../engine/generate.php">сгенерировать новый список заданий</a></p>
+	<p><a href="../engine/generate.php">Generate a new list of subtasks</a></p>
 	<?php $i = 0; ?>
 	<form name='dim' method='post' action='../engine/todone.php' class="form-inline" role="form">
 <?php foreach ($data as $row) {	?>
