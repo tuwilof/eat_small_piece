@@ -5,17 +5,47 @@
 	<div class="page-header">
 		<h1>Install</h1>
 	</div>
-	<form method='post'  action="install.php">
-		<p><b>Настройки базы данных</b></p>
-		<p>Сервер 		<input type='text' name="servdb"></p>
-		<p>Пользователь <input type='text' name="userdb"></p>
-		<p>Пароль 		<input type='text' name="passdb"></p>
-		<p>База данных 	<input type='text' name="namedb"></p>
+	<form method='post'  action="install.php" class="form-horizontal" role="form">
+		<p><b>Database configuration</b></p>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Server</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="servdb">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">User</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="userdb">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Password</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="passdb">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Database</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="namedb">
+			</div>
+		</div>
 		<br />
-		<p><b>Настройки пользователя</b></p>
-		<p>Имя 		<input type='text' name="user"></p>
-		<p>Пароль 	<input type='text' name="pass"></p>
-		<p><input type="submit" value="Отправить"></p>
+		<p><b>User settings</b></p>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">User</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="user">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Password</label>
+			<div class="col-sm-4">
+				<input type="password" class="form-control" name="pass">
+			</div>
+		</div>
+		<p><input type="submit" value="Send" class="btn btn-default"></p>
 	</form>
 </div>
 <?php 
