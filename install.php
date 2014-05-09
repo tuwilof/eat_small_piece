@@ -38,7 +38,7 @@
 	<div class="page-header">
 		<h1>Install</h1>
 	</div>
-	<p>Thanks</p>
+	<p>Thank you. Registration is completed. Please delete the file "install.php".</p>
 </div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="template/js/jquery.min.js"></script>
