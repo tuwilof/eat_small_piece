@@ -8,7 +8,7 @@
 	if ($page == "pies") {
 		require_once("engine/model.php");
 		$data = retrievesTaskListInArray();
-		if ($_COOKIE['EatSmallPieceCookie'] == $passin) {
+		if ($_COOKIE['hash'] == $passin) {
 			$titlePage = "Task list";
 			$scriptPage = "<script>document.getElementById('p1').classList.add('active');</script>";
 			require_once("template/header.tpl");
@@ -19,7 +19,7 @@
 		}
 	}
 	else if ($page == "add") {
-		if ($_COOKIE['EatSmallPieceCookie'] == $passin) {
+		if ($_COOKIE['hash'] == $passin) {
 			$titlePage = "Add task";
 			require_once("template/header.tpl");
 			require_once("template/add.tpl");
@@ -29,7 +29,7 @@
 		}
 	}
 	else if ($page == "piece") {
-		if ($_COOKIE['EatSmallPieceCookie'] == $passin) {
+		if ($_COOKIE['hash'] == $passin) {
 			if(isset($_GET['id'])) {
 				$id = $_GET['id'];
 				$result = mysql_query("SELECT * FROM task WHERE id ='$id'");
@@ -50,7 +50,7 @@
 	else if ($page == "getsubtask") {
 		require_once("engine/model.php");
 		$data = retrievesSubtaskListAndTitleTaskInArray();
-		if ($_COOKIE['EatSmallPieceCookie'] == $passin) {
+		if ($_COOKIE['hash'] == $passin) {
 			$titlePage = "Get subtask";
 			$scriptPage = "<script>document.getElementById('p2').classList.add('active');</script>";
 			require_once("template/header.tpl");
@@ -63,7 +63,7 @@
 	else if ($page == "performed") {
 		require_once("engine/model.php");
 		$data = retrievesPerfomedListInArray();
-		if ($_COOKIE['EatSmallPieceCookie'] == $passin) {
+		if ($_COOKIE['hash'] == $passin) {
 			$titlePage = "Performed";
 			$scriptPage = "<script>document.getElementById('p3').classList.add('active');</script>";
 			require_once("template/header.tpl");
@@ -74,7 +74,7 @@
 		}
 	}
 	else if ($page == "settings") {
-		if ($_COOKIE['EatSmallPieceCookie'] == $passin) {
+		if ($_COOKIE['hash'] == $passin) {
 			$titlePage = "Settings";
 			$scriptPage = "<script>document.getElementById('p4').classList.add('active');</script>";
 			require_once("template/header.tpl");
@@ -85,7 +85,7 @@
 		}
 	}
 	else {
-		if ($_COOKIE['EatSmallPieceCookie'] == $passin) {
+		if ($_COOKIE['hash'] == $passin) {
 			header('Location: /index.php?page=pies');
 		} else {
 			$titlePage = "Eat small piece";
