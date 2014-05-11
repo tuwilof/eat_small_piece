@@ -2,7 +2,7 @@
 	$page = trim($_GET['page']);
 	if ($page == "3") {
 		$user = $_POST['user'];
-		$pass = $_POST['pass'];
+		$pass = md5(md5($_POST['pass']));
 
 		require_once("engine/connect.php");
 
